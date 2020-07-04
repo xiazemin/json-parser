@@ -20,6 +20,9 @@ $rm -rf json-tutorial/.gitignore
 $rm -rf json-tutorial/.git
 $git add *
 $git commit -am 'add all'
+问题还是未解决
+
+mv json-tutorial/ tutorial
 问题解决
 
 
