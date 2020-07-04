@@ -16,5 +16,10 @@ git commit -am "modified Cheatsheet.html"
 
 此方法不行
 
+$rm -rf json-tutorial/.gitignore
+$rm -rf json-tutorial/.git
+$git add *
+$git commit -am 'add all'
+问题解决
 
 
