@@ -1,0 +1,44 @@
+object_start
+array_start
+value:[number]1
+add 1
+value:[number]2
+add 2
+value:[number]3
+add 3
+[...]
+value:ARRAY
+key "a"
+put
+array_start
+value:[string]"a\tbc"
+add "a\tbc"
+value:[string]"12  3"
+add "12  3"
+value:[string]"4,5\"6"
+add "4,5\"6"
+object_start
+value:[number]1
+key "x"
+put
+value:[string]"cc\ncc"
+key "y"
+put
+{...}
+value:OBJECT
+add "x"
+value:[number]4.56
+add 4.56
+[...]
+value:ARRAY
+key "b"
+put
+value:[string]"I'm OK~"
+key "text"
+put
+value:[number]234
+key "1-2"
+put
+{...}
+value:OBJECT
+end
