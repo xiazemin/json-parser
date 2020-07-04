@@ -14,4 +14,7 @@ git commit -am "modified Cheatsheet.html"
 
 -a 表示 add
 
+此方法不行
+
+
 
