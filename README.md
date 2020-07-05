@@ -26,3 +26,7 @@ mv json-tutorial/ tutorial
 问题解决
 
 
+https://github.com/OhBonsai/reading-notes/tree/master/writing-an-interpreter-in-Go/lang
+https://www.jianshu.com/p/428d663cb2d8
+
+
