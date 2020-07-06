@@ -1,0 +1,245 @@
+
+state 0
+	$accept: .calclist $end 
+	calclist: .    (1)
+
+	.  reduce 1 (src line 31)
+
+	calclist  goto 1
+
+state 1
+	$accept:  calclist.$end 
+	calclist:  calclist.exp EOL 
+	calclist:  calclist.ID ASSIGN exp EOL 
+
+	$end  accept
+	NUMBER  shift 6
+	ID  shift 3
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	exp  goto 2
+	factor  goto 4
+	term  goto 5
+
+state 2
+	calclist:  calclist exp.EOL 
+	exp:  exp.ADD factor 
+	exp:  exp.SUB factor 
+
+	ADD  shift 10
+	SUB  shift 11
+	EOL  shift 9
+	.  error
+
+
+state 3
+	calclist:  calclist ID.ASSIGN exp EOL 
+	term:  ID.    (11)
+
+	ASSIGN  shift 12
+	.  reduce 11 (src line 58)
+
+
+state 4
+	exp:  factor.    (4)
+	factor:  factor.MUL term 
+	factor:  factor.DIV term 
+
+	MUL  shift 13
+	DIV  shift 14
+	.  reduce 4 (src line 44)
+
+
+state 5
+	factor:  term.    (7)
+
+	.  reduce 7 (src line 50)
+
+
+state 6
+	term:  NUMBER.    (10)
+
+	.  reduce 10 (src line 56)
+
+
+state 7
+	term:  ABS.term 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	term  goto 15
+
+state 8
+	term:  LPAREN.exp RPAREN 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	exp  goto 17
+	factor  goto 4
+	term  goto 5
+
+state 9
+	calclist:  calclist exp EOL.    (2)
+
+	.  reduce 2 (src line 33)
+
+
+state 10
+	exp:  exp ADD.factor 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	factor  goto 18
+	term  goto 5
+
+state 11
+	exp:  exp SUB.factor 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	factor  goto 19
+	term  goto 5
+
+state 12
+	calclist:  calclist ID ASSIGN.exp EOL 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	exp  goto 20
+	factor  goto 4
+	term  goto 5
+
+state 13
+	factor:  factor MUL.term 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	term  goto 21
+
+state 14
+	factor:  factor DIV.term 
+
+	NUMBER  shift 6
+	ID  shift 16
+	ABS  shift 7
+	LPAREN  shift 8
+	.  error
+
+	term  goto 22
+
+state 15
+	term:  ABS term.    (12)
+
+	.  reduce 12 (src line 59)
+
+
+state 16
+	term:  ID.    (11)
+
+	.  reduce 11 (src line 58)
+
+
+state 17
+	exp:  exp.ADD factor 
+	exp:  exp.SUB factor 
+	term:  LPAREN exp.RPAREN 
+
+	ADD  shift 10
+	SUB  shift 11
+	RPAREN  shift 23
+	.  error
+
+
+state 18
+	exp:  exp ADD factor.    (5)
+	factor:  factor.MUL term 
+	factor:  factor.DIV term 
+
+	MUL  shift 13
+	DIV  shift 14
+	.  reduce 5 (src line 46)
+
+
+state 19
+	exp:  exp SUB factor.    (6)
+	factor:  factor.MUL term 
+	factor:  factor.DIV term 
+
+	MUL  shift 13
+	DIV  shift 14
+	.  reduce 6 (src line 47)
+
+
+state 20
+	calclist:  calclist ID ASSIGN exp.EOL 
+	exp:  exp.ADD factor 
+	exp:  exp.SUB factor 
+
+	ADD  shift 10
+	SUB  shift 11
+	EOL  shift 24
+	.  error
+
+
+state 21
+	factor:  factor MUL term.    (8)
+
+	.  reduce 8 (src line 52)
+
+
+state 22
+	factor:  factor DIV term.    (9)
+
+	.  reduce 9 (src line 53)
+
+
+state 23
+	term:  LPAREN exp RPAREN.    (13)
+
+	.  reduce 13 (src line 60)
+
+
+state 24
+	calclist:  calclist ID ASSIGN exp EOL.    (3)
+
+	.  reduce 3 (src line 37)
+
+
+14 terminals, 5 nonterminals
+14 grammar rules, 25/8000 states
+0 shift/reduce, 0 reduce/reduce conflicts reported
+54 working sets used
+memory: parser 16/120000
+16 extra closures
+48 shift entries, 1 exceptions
+11 goto entries
+6 entries saved by goto default
+Optimizer space used: output 39/120000
+39 table entries, 8 zero
+maximum spread: 14, maximum offset: 14
