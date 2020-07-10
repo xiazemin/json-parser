@@ -1,7 +1,3 @@
-package main
-
-import "github.com/xiazemin/json-parser/antlr/antlr4go/parser"
-
 // example2.go
 package main
 

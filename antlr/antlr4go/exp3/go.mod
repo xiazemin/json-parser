@@ -1,4 +1,4 @@
-module github.com/xiazemin/json-parser/antlr/antlr4go/exp1
+module github.com/xiazemin/json-parser/antlr/antlr4go
 
 go 1.13
 
