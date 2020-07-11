@@ -1,6 +1,6 @@
 package main
 import (
-	"bramp.net/antlr4/json"
+	"fmt"
 	"github.com/xiazemin/json-parser/antlr/thrift/parser"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -10,8 +10,8 @@ type exampleListener struct {
 	*parser.BaseThriftListener
 }
 
-func (l*exampleListener)Start()  {
-
+func (l*exampleListener)ExitGoStruct(c *parser.GoStructContext)  {
+   fmt.Println("%#v",*c)
 }
 
 func main() {
@@ -41,6 +41,5 @@ service LoginService {
 	p:=parser.NewThriftParser(stream)
 	// Finally walk the tree
 	var listener exampleListener
-	antlr.ParseTreeWalkerDefault.Walk(&listener{}, p.Start() )
-	return listener.pop()
+	antlr.ParseTreeWalkerDefault.Walk(&listener, p.Document() )
 }

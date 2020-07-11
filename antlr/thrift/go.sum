@@ -1,2 +1,4 @@
+bramp.net/antlr4 v0.0.0-20190812013724-3751fbacda98 h1:DgXc/2ivr1/j6opaxKqNLn0tdGwwrcIZbqchnJ5EtqE=
+bramp.net/antlr4 v0.0.0-20190812013724-3751fbacda98/go.mod h1:9rnudSLFEaUF+9rBLuIprgeKhu7wA5LBmok9Nz0UHkU=
 github.com/antlr/antlr4 v0.0.0-20200701161529-3d9351f61e0f h1:lUOL4gjIXsvK9kBlHsWJNGX2dEzW0cMlVNmqr2ad5DM=
 github.com/antlr/antlr4 v0.0.0-20200701161529-3d9351f61e0f/go.mod h1:T7PbCXFs94rrTttyxjbyT5+/1V8T2TYDejxUfHJjw1Y=

@@ -13,7 +13,17 @@
             <groupId>org.antlr</groupId>
             <artifactId>antlr4</artifactId>
             <version>4.8.1</version>
+            <scope>system</scope>
+            <!--systemPath>${project.basedir}/antlr-4.8-complete.jar</systemPath-->
+            <systemPath>/Users/didi/PhpstormProjects/c/json-parser/antlr/calc/antlr-4.8-complete.jar</systemPath>
         </dependency>
+        <!--dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr4</artifactId>
+            <version>4.8.1</version>
+        </dependency-->
     </dependencies>
-
+    <build>
+        <defaultGoal>compile</defaultGoal>
+    </build>
 </project>

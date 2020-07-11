@@ -16,3 +16,7 @@ The struct definition from the canonical Thrift.g4 may cause exceptions when gen
  $go mod init github.com/xiazemin/json-parser/antlr/thrift
 go: creating new go.mod: module github.com/xiazemin/json-parser/antlr/thrift
 $go mod edit -replace github.com/xiazemin/json-parser/antlr/thrift/parser=./parser
+
+$go run example.go
+
+//https://github.com/antlr/grammars-v4/tree/master/thrift
