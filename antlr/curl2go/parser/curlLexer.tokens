@@ -1,0 +1,13 @@
+T__0=1
+T__1=2
+T__2=3
+SHORTCMD=4
+LONGCMD=5
+BackQuoteString=6
+SingleQuoteString=7
+DoubleQuoteString=8
+Url=9
+WS=10
+'curl'=1
+'-X'=2
+'POST'=3
